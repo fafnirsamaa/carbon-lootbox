@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Rapport Carbon Lootbox - Page 3</title>
+  <style>
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Medium.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'N27', sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .page {
+      width: 595px;
+      height: 842px;
+      background: white;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Header */
+    .hypothesis-header {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .hypothesis-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #131313;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .category-legend {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .category-icon {
+      width: 8px;
+      height: 8px;
+      background: #fee440;
+      border-radius: 2px;
+    }
+
+    .category-label {
+      font-size: 8px;
+      color: #131313;
+    }
+
+    .hypothesis-description {
+      flex: 1;
+      font-size: 8px;
+      color: #878787;
+      line-height: normal;
+    }
+
+    .hypothesis-description strong {
+      color: #131313;
+      font-weight: 500;
+    }
+
+    /* Expandable Cards */
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .hypothesis-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-radius: 16px;
+      padding: 4px;
+      width: 100%;
+    }
+
+    .hypothesis-card.with-bg {
+      background: #f6f6f6;
+      border-radius: 12px;
+    }
+
+    .card-header {
+      background: #fee440;
+      border-radius: 8px;
+      padding: 8px 16px 8px 8px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .card-content {
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-content p {
+      font-size: 12px;
+      color: #131313;
+      line-height: normal;
+    }
+
+    /* List Items */
+    .list-block {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .list-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 3px;
+      padding: 4px 0;
+    }
+
+    .list-bullet {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2px;
+    }
+
+    .bullet-dot {
+      width: 6px;
+      height: 6px;
+      background: #fee440;
+      border-radius: 50%;
+      margin-top: 3px;
+    }
+
+    .list-item p {
+      flex: 1;
+      font-size: 12px;
+      color: #131313;
+      line-height: normal;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="hypothesis-header">
+      <div class="header-left">
+        <div class="hypothesis-title">Hypothèses de calcul</div>
+        <div class="category-legend">
+          <div class="category-icon"></div>
+          <span class="category-label">Catégories d'émissions</span>
+        </div>
+      </div>
+      <div class="hypothesis-description">
+        Les données du Bilan Carbone N-1 de Niji sont utilisées dans cet outil pour <strong>tous les postes d'émissions du niveau 0, et pour le poste "Site Niji" des niveaux 1 & 2.</strong> Un ratio est a été appliqué sur ces données, afin d'obtenir les émissions par ETP et par jour ouvré.
+      </div>
+    </div>
+
+    <!-- Cards Wrapper -->
+    <div class="cards-wrapper">
+      <!-- Card 1: Infrastructure numérique -->
+      <div class="hypothesis-card">
+        <div class="card-header">
+          <img src="laptop.svg" alt="Laptop icon" class="card-icon">
+          <span class="card-title">Infrastructure numérique</span>
+        </div>
+        <div class="card-content">
+          <p>Hypothèse d'une durée de vie d'un équipement identique à la durée d'amortissement de chaque équipement Niji.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Télétravail -->
+      <div class="hypothesis-card with-bg">
+        <div class="card-header">
+          <img src="laptop.svg" alt="Laptop icon" class="card-icon">
+          <span class="card-title">Télétravail</span>
+        </div>
+        <div class="card-content">
+          <p>Hypothèse d'une surconsommation d'électricité et de chauffage à domicile de 7,5 kWh par jour de télétravail (source ADEME).</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Déplacements réguliers -->
+      <div class="hypothesis-card">
+        <div class="card-header">
+          <img src="calendar.svg" alt="Calendar icon" class="card-icon">
+          <span class="card-title">Déplacements réguliers</span>
+        </div>
+        <div class="card-content">
+          <p>Extrapolation des résultats de l'enquête interne annuelle sur les déplacements domicile-travail pour couvrir l'ensemble des collaborateurs.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Déplacements ponctuels -->
+      <div class="hypothesis-card with-bg">
+        <div class="card-header">
+          <img src="location.svg" alt="Location icon" class="card-icon">
+          <span class="card-title">Déplacements ponctuels</span>
+        </div>
+        <div class="card-content">
+          <div class="list-block">
+            <div class="list-column">
+              <div class="list-item">
+                <div class="list-bullet">
+                  <div class="bullet-dot"></div>
+                </div>
+                <p>Hypothèse des indemnités km de 0,5€ / km.</p>
+              </div>
+              <div class="list-item">
+                <div class="list-bullet">
+                  <div class="bullet-dot"></div>
+                </div>
+                <p>Hypothèse pour les transports en commun de 1,9€ par ticket et de 10 km par trajet.</p>
+              </div>
+              <div class="list-item">
+                <div class="list-bullet">
+                  <div class="bullet-dot"></div>
+                </div>
+                <p>Hypothèse pour le taxi de 1,82€ / km.</p>
+              </div>
+            </div>
+            <div class="list-column">
+              <div class="list-item">
+                <div class="list-bullet">
+                  <div class="bullet-dot"></div>
+                </div>
+                <p>Hypothèse des vols moyen-courriers : vols européens et ceux vers l'Afrique du Nord.</p>
+              </div>
+              <div class="list-item">
+                <div class="list-bullet">
+                  <div class="bullet-dot"></div>
+                </div>
+                <p>Hypothèse des vols long-courriers : vols transcontinentaux.</p>
+              </div>
+              <div class="list-item">
+                <div class="list-bullet">
+                  <div class="bullet-dot"></div>
+                </div>
+                <p>Hypothèse des vols court-courriers : vols intérieurs, et ceux vers Londres.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Usages numériques -->
+      <div class="hypothesis-card">
+        <div class="card-header">
+          <img src="mobile_data.svg" alt="Data icon" class="card-icon">
+          <span class="card-title">Usages numériques</span>
+        </div>
+        <div class="card-content">
+          <p>Akuiteo, Salesforce & Blue : Extrapolation des données transférées du site de Rennes, rapportées à chaque ETP pour couvrir l'ensemble des collaborateurs.</p>
+          <p>Microsoft 365 : Moyenne des émissions générées sur le mois de février 2025 par ETP.</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Equipements IT -->
+      <div class="hypothesis-card with-bg">
+        <div class="card-header">
+          <img src="laptop.svg" alt="Computer icon" class="card-icon">
+          <span class="card-title">Equipements IT</span>
+        </div>
+        <div class="card-content">
+          <p>Hypothèse d'une durée de vie d'un équipement identique à la durée d'amortissement de chaque équipement Niji. Chaque collaborateur possède 1 écran, 1 chargeur, et 1 ordinateur portable, sauf modification dans la saisie au niveau 2.</p>
+        </div>
+      </div>
+
+      <!-- Card 7: Hébergement & Restauration -->
+      <div class="hypothesis-card">
+        <div class="card-header">
+          <img src="user.svg" alt="Restaurant icon" class="card-icon">
+          <span class="card-title">Hébergement & Restauration</span>
+        </div>
+        <div class="card-content">
+          <p>Utilisation du plafond alloué par Niji en cas de logement exceptionnel, incluant le budget pour le dîner du soir. Une nuitée à Paris coûte 165 €, et une nuitée en Province coûte 130 €.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

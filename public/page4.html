@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Rapport Carbon Lootbox - Page 4</title>
+  <style>
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Medium.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'N27', sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .page {
+      width: 595px;
+      height: 842px;
+      background: white;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Header */
+    .hypothesis-header {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .hypothesis-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #131313;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .hypothesis-description {
+      flex: 1;
+      font-size: 8px;
+      color: #878787;
+      line-height: normal;
+    }
+
+    .hypothesis-description strong {
+      color: #131313;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+      line-height: normal;
+    }
+
+    /* Bullet Points */
+    .bullet-point {
+      display: flex;
+      gap: 4px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .bullet-icon {
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      border-radius: 999px;
+      background: #fee440;
+      color: rgba(0, 0, 0, 0);
+      margin-top: 3px;
+    }
+
+    .bullet-text {
+      flex: 1;
+      font-size: 12px;
+      color: #878787;
+      line-height: 1.4;
+      letter-spacing: -0.12px;
+    }
+
+    .bullet-text strong {
+      color: #131313;
+      font-weight: 500;
+    }
+
+    /* Partner Cards */
+    .partner-cards {
+      display: flex;
+      gap: 9px;
+      width: 100%;
+    }
+
+    .partner-card {
+      flex: 1;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .partner-logo {
+      height: 88px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .partner-divider {
+      width: 100%;
+      height: 1px;
+      background: #f6f6f6;
+    }
+
+    .partner-content {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .partner-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #131313;
+      line-height: normal;
+    }
+
+    .partner-description {
+      font-size: 12px;
+      color: #131313;
+      line-height: normal;
+    }
+
+    .co2-subscript {
+      font-size: 10.32px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="hypothesis-header">
+      <div class="header-left">
+        <div class="hypothesis-title">Hypothèses de calcul</div>
+      </div>
+      <div class="hypothesis-description">
+        Les données du Bilan Carbone N-1 de Niji sont utilisées dans cet outil pour <strong>tous les postes d'émissions du niveau 0, et pour le poste "Site Niji" des niveaux 1 & 2. </strong>Un ratio est a été appliqué sur ces données, afin d'obtenir les émissions par ETP et par jour ouvré.
+      </div>
+    </div>
+
+    <!-- Périmètre du calcul Section -->
+    <div class="section">
+      <div class="section-title">Périmètre du calcul</div>
+      
+      <div class="bullet-point">
+        <div class="bullet-icon"></div>
+        <div class="bullet-text">
+          L'impact carbone des livrables <strong>n'est pas pris en compte</strong> dans le calcul des émissions dans notre outil.
+        </div>
+      </div>
+
+      <div class="bullet-point">
+        <div class="bullet-icon"></div>
+        <div class="bullet-text">
+          <strong>Seules les émissions des collaborateurs Niji localisés en France sont calculées.</strong> Il est prévu de prendre en compte les sites Marocains et Espagnols, lorsqu'ils seront intégrés dans le périmètre de calcul du Bilan Carbone de l'entreprise.
+        </div>
+      </div>
+
+      <div class="bullet-point">
+        <div class="bullet-icon"></div>
+        <div class="bullet-text">
+          <strong>L'impact carbone du site client n'est pas comptabilisé dans l'outil. </strong>Ainsi, le résultat affiché par l'outil est allégé lorsque l'intégralité ou une partie de la prestation est réalisée chez le client.
+        </div>
+      </div>
+
+      <div class="bullet-point">
+        <div class="bullet-icon"></div>
+        <div class="bullet-text">
+          <strong>L'outil ne prend pas en compte les émissions carbone des commerciaux</strong>, notamment générées lors des déplacements de suivi de projet
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners Section -->
+    <div class="section">
+      <div class="section-title">Les partenaires avec qui nous avons construit la solution</div>
+      
+      <div class="partner-cards">
+        <!-- Agence Déclic Card -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="agence-declic.png" alt="L'agence Déclic">
+          </div>
+          <div class="partner-divider"></div>
+          <div class="partner-content">
+            <div class="partner-name">L'agence Déclic</div>
+            <div class="partner-description">
+              Experte en carbone, l'agence a analysé les facteurs d'émissions choisis, les moyennes des données Niji et sur les calculs effectués à partir des données réelles du projet.
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact CO2 Card -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="impact-co2.png" alt="Impact CO2">
+          </div>
+          <div class="partner-divider"></div>
+          <div class="partner-content">
+            <div class="partner-name">Impact CO<span class="co2-subscript">2</span></div>
+            <div class="partner-description">
+              Le calculateur utilise des outils d'Impact CO2, la start-up d'Etat au sein de l'ADEME qui facilite l'utilisation de la Base Empreinte et la communication du résultat.
+            </div>
+          </div>
+        </div>
+
+        <!-- Base Empreinte Card -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="base-empreinte.png" alt="Base Empreinte">
+          </div>
+          <div class="partner-divider"></div>
+          <div class="partner-content">
+            <div class="partner-name">Base Empreinte</div>
+            <div class="partner-description">
+              Le calculateur utilise des outils d'Impact CO2, la start-up d'Etat au sein de l'ADEME qui facilite l'utilisation de la Base Empreinte et la communication du résultat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

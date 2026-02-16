@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Rapport Carbon Lootbox - Page 2</title>
+  <style>
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Medium.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'N27', sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .page {
+      width: 595px;
+      height: 842px;
+      background: white;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #131313;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .page-number {
+      font-size: 8px;
+      color: #878787;
+      text-align: center;
+    }
+
+    /* Emissions by Member Section */
+    .emissions-by-member {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .section-header {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .section-subtitle {
+      font-size: 8px;
+      color: #878787;
+    }
+
+    .chart-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .chart-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .member-label {
+      width: 70px;
+      font-size: 8px;
+      color: #131313;
+      text-align: right;
+      line-height: normal;
+    }
+
+    .horizontal-bar {
+      flex: 1;
+      display: flex;
+      height: 10px;
+    }
+
+    .bar-segment {
+      height: 100%;
+    }
+
+    .bar-segment.orange {
+      background: #ffa200;
+      width: 239px;
+    }
+
+    .bar-segment.purple {
+      background: #8147f5;
+      width: 162px;
+    }
+
+    .bar-segment.green {
+      background: #0ce89b;
+      flex: 1;
+    }
+
+    .bar-segment.red {
+      background: #f65555;
+      width: 18px;
+    }
+
+    /* Legend */
+    .chart-legend {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .legend-item {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .legend-color {
+      width: 4.838px;
+      height: 4.838px;
+      border-radius: 0.806px;
+    }
+
+    .legend-label {
+      font-size: 8px;
+      color: #131313;
+    }
+
+    /* Hypotheses Section */
+    .hypotheses-section {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .hypothesis-header {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .hypothesis-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #131313;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .category-legend {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .category-icon {
+      width: 8px;
+      height: 8px;
+      background: #fee440;
+      border-radius: 2px;
+    }
+
+    .category-label {
+      font-size: 8px;
+      color: #131313;
+    }
+
+    .hypothesis-description {
+      flex: 1;
+      font-size: 8px;
+      color: #878787;
+      line-height: normal;
+    }
+
+    .hypothesis-description strong {
+      color: #131313;
+      font-weight: 500;
+    }
+
+    /* Expandable Cards */
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .hypothesis-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-radius: 12px;
+      padding: 4px;
+      width: 100%;
+    }
+
+    .hypothesis-card.with-bg {
+      background: #f6f6f6;
+    }
+
+    .card-header {
+      background: #fee440;
+      border-radius: 8px;
+      padding: 8px 16px 8px 8px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .card-content {
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-content p {
+      font-size: 12px;
+      color: #131313;
+      line-height: normal;
+    }
+
+    /* List Items */
+    .list-block {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .list-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 3px;
+      padding: 4px 0;
+    }
+
+    .list-bullet {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2px;
+    }
+
+    .bullet-dot {
+      width: 6px;
+      height: 6px;
+      background: #fee440;
+      border-radius: 50%;
+      margin-top: 3px;
+    }
+
+    .list-item p {
+      flex: 1;
+      font-size: 12px;
+      color: #131313;
+      line-height: normal;
+    }
+
+    /* Two Column Layout */
+    .two-column-content {
+      display: flex;
+      gap: 12px;
+    }
+
+    .content-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .divider {
+      width: 1px;
+      align-self: center;
+      position: relative;
+    }
+
+    .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      width: 106px;
+      height: 1px;
+      background: #e0e0e0;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="header">
+      <div class="title">rapport carbon lootbox</div>
+      <div class="page-number">2/8</div>
+    </div>
+
+    <!-- Emissions by Member -->
+    <div class="emissions-by-member">
+      <div class="section-header">
+        <span class="section-title">Émission par membre</span>
+        <span class="section-subtitle">(en kgCO2e)</span>
+      </div>
+
+      <div class="chart-rows">
+        <div class="chart-row">
+          <div class="member-label">Lead Tech / Devops</div>
+          <div class="horizontal-bar">
+            <div class="bar-segment orange"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment green"></div>
+            <div class="bar-segment red"></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="member-label">Manager</div>
+          <div class="horizontal-bar">
+            <div class="bar-segment orange"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment green"></div>
+            <div class="bar-segment red"></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="member-label">Business Analyst</div>
+          <div class="horizontal-bar">
+            <div class="bar-segment orange"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment green"></div>
+            <div class="bar-segment red"></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="member-label">Lead Tech</div>
+          <div class="horizontal-bar">
+            <div class="bar-segment orange"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment green"></div>
+            <div class="bar-segment red"></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="member-label">Chef de projet 1</div>
+          <div class="horizontal-bar">
+            <div class="bar-segment orange"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment green"></div>
+            <div class="bar-segment red"></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="member-label">Testeur 1</div>
+          <div class="horizontal-bar">
+            <div class="bar-segment orange"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment green"></div>
+            <div class="bar-segment red"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ffa200;"></div>
+          <span class="legend-label">Site Niji</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #8147f5;"></div>
+          <span class="legend-label">Déplacement</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #0ce89b;"></div>
+          <span class="legend-label">IT</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #f65555;"></div>
+          <span class="legend-label">Télétravail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hypotheses Section -->
+    <div class="hypotheses-section">
+      <div class="hypothesis-header">
+        <div class="header-left">
+          <div class="hypothesis-title">Hypothèses de calcul</div>
+          <div class="category-legend">
+            <div class="category-icon"></div>
+            <span class="category-label">Catégories d'émissions</span>
+          </div>
+        </div>
+        <div class="hypothesis-description">
+          Les données du Bilan Carbone N-1 de Niji sont utilisées dans cet outil pour <strong>tous les postes d'émissions du niveau 0, et pour le poste "Site Niji" des niveaux 1 & 2.</strong> Un ratio est a été appliqué sur ces données, afin d'obtenir les émissions par ETP et par jour ouvré.
+        </div>
+      </div>
+
+      <div class="cards-wrapper">
+        <!-- Card 1: Autres (Site Niji) -->
+        <div class="hypothesis-card with-bg">
+          <div class="card-header">
+            <img src="home_arrow.svg" alt="Home icon" class="card-icon">
+            <span class="card-title">Autres (Site Niji)</span>
+          </div>
+          <div class="card-content">
+            <p>Les émissions de ce poste regroupent les catégories Achats de bien, Achats de service, Déchets, Immobilisations autres équipements / véhicules / bâtiment, Télétravail. Celles-ci figurent dans le Bilan Carbone Niji N-1, et sont ramenées à 1 ETP/jour ouvré.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Fuites de fluide de climatisation -->
+        <div class="hypothesis-card">
+          <div class="card-header">
+            <img src="snow.svg" alt="Climate icon" class="card-icon">
+            <span class="card-title">Fuites de fluide de climatisation</span>
+          </div>
+          <div class="card-content">
+            <p>3 hypothèses sont déclinables selon le niveau d'information disponibles pour les équipements de clim sur les sites. Lorsque la donnée de fuite de fluide de climatisation d'un site n'est pas renseignée dans le Bilan Carbone N-1 :</p>
+            <div class="list-block">
+              <div class="list-column">
+                <div class="list-item">
+                  <div class="list-bullet">
+                    <div class="bullet-dot"></div>
+                  </div>
+                  <p>La quantité de fluide dépend de la surface occupée (équivalent à 0,1 kW frigorifique par m²)</p>
+                </div>
+                <div class="list-item">
+                  <div class="list-bullet">
+                    <div class="bullet-dot"></div>
+                  </div>
+                  <p>La quantité totale de fluide dans le système de climatisation est de 0,3 kg par kW frigorifique, auquel un taux de fuite annuel moyen de 10% est appliqué.</p>
+                </div>
+              </div>
+              <div class="list-column">
+                <div class="list-item">
+                  <div class="list-bullet">
+                    <div class="bullet-dot"></div>
+                  </div>
+                  <p>Le R410A est choisi pour les climatiseurs dont le fluide frigorigène est inconnu, car il s'agit du fluide frigorigène le plus utilisé dans les climatisations tertiaires.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Consommation d'énergie -->
+        <div class="hypothesis-card with-bg">
+          <div class="card-header">
+            <img src="battery.svg" alt="Battery icon" class="card-icon">
+            <span class="card-title">Consommation d'énergie</span>
+          </div>
+          <div class="card-content">
+            <div class="two-column-content">
+              <div class="content-column">
+                <p>Lorsque la donnée de consommation énergétique d'un site n'est pas renseignée dans le Bilan Carbone N-1, mais disponible l'année précédente :</p>
+                <p>Hypothèse d'une consommation identique à l'année précédente lorsqu'il n'y a pas eu d'augmentation de l'effectif.</p>
+              </div>
+              <div class="divider"></div>
+              <div class="content-column">
+                <p>Lorsqu'il n'existe pas de données de consommations énergétiques pour un site :</p>
+                <p>Hypothèse d'une consommation électrique annuelle de 112 kWh/m² par an (source OID).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

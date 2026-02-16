@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Rapport Carbon Lootbox</title>
+  <style>
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Medium.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'N27';
+      src: url('N27-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'N27', sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .page {
+      width: 595px;
+      height: 842px;
+      background: white;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #131313;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .page-number {
+      font-size: 8px;
+      color: #878787;
+      text-align: center;
+    }
+
+    /* Info Cards */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      height: 85px;
+    }
+
+    .info-card.fixed-width {
+      width: 269px;
+    }
+    
+    .info-card:not(.fixed-width) {
+      width: 270px;
+    }
+
+    .icon-wrapper {
+      width: 24px;
+      height: 24px;
+      background: #fee440;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .icon-wrapper svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3.73px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #131313;
+      line-height: normal;
+    }
+
+    .card-subtitle {
+      font-size: 12px;
+      font-weight: 400;
+      color: #131313;
+      line-height: normal;
+    }
+
+    .pattern-bg {
+      position: absolute;
+      top: -128px;
+      left: 72px;
+      width: 250px;
+      height: 250px;
+      background-image: url('pattern.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 1;
+      transform: rotate(150deg) rotate(-180deg);
+      pointer-events: none;
+    }
+
+    /* Summary Section */
+    .summary-section {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .summary-text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .summary-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .summary-description {
+      font-size: 12px;
+      color: #878787;
+      line-height: 1.4;
+      letter-spacing: -0.12px;
+    }
+
+    .summary-description strong {
+      color: #131313;
+      font-weight: 600;
+    }
+
+    .impact-box {
+      background: #fee440;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 215px;
+      height: fit-content;
+    }
+
+    .impact-header {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+    }
+
+    .impact-label {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 700;
+      color: #131313;
+      width: 151px;
+      height: fit-content;
+    }
+
+    .impact-value-box {
+      background: white;
+      padding: 5px;
+      border-radius: 4px;
+      display: flex;
+      gap: 3px;
+      align-items: baseline;
+    }
+
+    .impact-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .impact-unit {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .impact-comparison {
+      border: 0.312px solid #131313;
+      border-radius: 4px;
+      padding: 6px;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      font-size: 16px;
+      color: #131313;
+    }
+
+    /* Emissions Breakdown */
+    .emissions-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .section-title-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .section-subtitle {
+      font-size: 8px;
+      color: #878787;
+      height: fit-content;
+    }
+
+    .chart-container {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .chart-placeholder {
+      width: 107px;
+      height: 107px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #ffa200 0deg 273.6deg,
+        #8147f5 273.6deg 324deg,
+        #0ce89b 324deg 338.4deg,
+        #f65555 338.4deg 360deg
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .chart-placeholder::after {
+      content: '';
+      width: 55px;
+      height: 55px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .legend {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .legend-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .legend-color {
+      width: 6px;
+      height: 6px;
+      border-radius: 1px;
+    }
+
+    .legend-label {
+      font-size: 12px;
+      color: #131313;
+    }
+
+    .legend-value {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .legend-number {
+      font-size: 12px;
+      color: #131313;
+    }
+
+    .legend-percent {
+      font-size: 10px;
+      color: #878787;
+      border: 0.5px solid;
+      border-radius: 1.613px;
+      padding: 2px;
+    }
+
+    /* Breakdown Cards */
+    .breakdown-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .breakdown-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .breakdown-card {
+      background: #f6f6f6;
+      padding: 8px;
+      width: 269.5px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .breakdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+    }
+
+    .breakdown-title {
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .breakdown-value-container {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .breakdown-value {
+      color: #131313;
+    }
+
+    .breakdown-percent {
+      color: #878787;
+    }
+
+    .bar-container {
+      width: 100%;
+      height: 4px;
+      background: #e7e7e7;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .breakdown-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding-left: 4px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      color: #131313;
+    }
+
+    .detail-bar {
+      width: 100%;
+      height: 2px;
+      background: #e7e7e7;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .detail-bar-fill {
+      height: 100%;
+    }
+
+    /* Color classes */
+    .color-orange { background: #ffa200; }
+    .color-purple { background: #8147f5; }
+    .color-purple-light { background: #bb47f5; }
+    .color-green { background: #0ce89b; }
+    .color-red { background: #f65555; }
+    .color-pink { background: #fb5fb3; }
+    .border-orange { border-color: #ffa200; }
+    .border-purple { border-color: #8147f5; }
+    .border-green { border-color: #0ce89b; }
+    .border-red { border-color: #f65555; }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="header">
+      <div class="title">rapport carbon lootbox</div>
+      <div class="page-number">1/8</div>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="cards-container">
+      <div class="cards-row">
+        <div class="info-card fixed-width">
+          <div class="icon-wrapper">
+            <img src="agenda.svg" alt="Document icon" width="16" height="16">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Nom du client</div>
+            <div class="card-subtitle">Intitulé du projet</div>
+          </div>
+          <div class="pattern-bg"></div>
+        </div>
+        <div class="info-card">
+          <div class="icon-wrapper">
+            <img src="calendar.svg" alt="Calendar icon" width="16" height="16">
+          </div>
+          <div class="card-content">
+            <div class="card-title">19/06/2025</div>
+            <div class="card-subtitle">Date de l'estimation</div>
+          </div>
+          <div class="pattern-bg"></div>
+        </div>
+      </div>
+      <div class="cards-row">
+        <div class="info-card fixed-width">
+          <div class="icon-wrapper">
+            <img src="user_group.svg" alt="Users icon" width="16" height="16">
+          </div>
+          <div class="card-content">
+            <div class="card-title">1</div>
+            <div class="card-subtitle">Collaborateurs sollicités lors du projet</div>
+          </div>
+          <div class="pattern-bg"></div>
+        </div>
+        <div class="info-card">
+          <div class="icon-wrapper">
+            <img src="clock.svg" alt="Clock icon" width="16" height="16">
+          </div>
+          <div class="card-content">
+            <div class="card-title">557</div>
+            <div class="card-subtitle">Jours ouvrés (Charge du projet)</div>
+          </div>
+          <div class="pattern-bg"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section">
+      <div class="summary-text">
+        <div class="summary-title">Synthèse des résultats</div>
+        <div class="summary-description">
+          Carbon Lootbox permet de calculer une <strong>estimation du volume d'émissions produites</strong> lors de la réalisation du projet et dépendent de la précision des données renseignées
+        </div>
+      </div>
+      <div class="impact-box">
+        <div class="impact-header">
+          <div class="impact-label">Impact C0<sub style="font-size: 10px;">2</sub></div>
+          <div class="impact-value-box">
+            <span class="impact-value">23,09</span>
+            <span class="impact-unit">tCO<sub style="font-size: 8px;">2</sub>e</span>
+          </div>
+        </div>
+        <div class="impact-comparison">
+          <img src="location.svg" alt="Location icon" width="16" height="16">
+          2,5 A/R Paris New York
+        </div>
+      </div>
+    </div>
+
+    <!-- Emissions Breakdown -->
+    <div class="emissions-section">
+      <div class="section-title-wrapper">
+        <div class="section-title">Répartition des émissions par poste</div>
+        <div class="section-subtitle">(en kgCO2e)</div>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-placeholder"></div>
+        <div class="legend">
+          <div class="legend-line">
+            <div class="legend-item">
+              <div class="legend-color color-orange"></div>
+              <div class="legend-label">Site Niji</div>
+            </div>
+            <div class="legend-value">
+              <span class="legend-number">1 345 009</span>
+              <span class="legend-percent border-orange">100%</span>
+            </div>
+          </div>
+          <div class="legend-line">
+            <div class="legend-item">
+              <div class="legend-color color-purple"></div>
+              <div class="legend-label">Déplacement</div>
+            </div>
+            <div class="legend-value">
+              <span class="legend-number">1 345 009</span>
+              <span class="legend-percent border-purple">100%</span>
+            </div>
+          </div>
+          <div class="legend-line">
+            <div class="legend-item">
+              <div class="legend-color color-green"></div>
+              <div class="legend-label">IT</div>
+            </div>
+            <div class="legend-value">
+              <span class="legend-number">1 345 009</span>
+              <span class="legend-percent border-green">100%</span>
+            </div>
+          </div>
+          <div class="legend-line">
+            <div class="legend-item">
+              <div class="legend-color color-red"></div>
+              <div class="legend-label">Télétravail</div>
+            </div>
+            <div class="legend-value">
+              <span class="legend-number">1 345 009</span>
+              <span class="legend-percent border-red">100%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breakdown Cards -->
+      <div class="breakdown-container">
+        <div class="breakdown-row">
+          <div class="breakdown-card">
+            <div class="breakdown-header">
+              <span class="breakdown-title">Déplacements</span>
+              <div class="breakdown-value-container">
+                <span class="breakdown-value">200 kgCO2e</span>
+                <span class="breakdown-percent">(20%)</span>
+              </div>
+            </div>
+            <div class="bar-container">
+              <div class="bar-fill color-purple-light" style="width: 20%;"></div>
+            </div>
+            <div class="breakdown-details">
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Ponctuels</span>
+                  <span>33 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 16%; background: rgba(187, 71, 245, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Réguliers</span>
+                  <span>167 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 84%; background: rgba(187, 71, 245, 0.4);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="breakdown-card">
+            <div class="breakdown-header">
+              <span class="breakdown-title">Télétravail</span>
+              <div class="breakdown-value-container">
+                <span class="breakdown-value">0 kgCO2e</span>
+                <span class="breakdown-percent">(0%)</span>
+              </div>
+            </div>
+            <div class="bar-container">
+              <div class="bar-fill color-pink" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="breakdown-row">
+          <div class="breakdown-card">
+            <div class="breakdown-header">
+              <span class="breakdown-title">Site Niji</span>
+              <div class="breakdown-value-container">
+                <span class="breakdown-value">765 kgCO2e</span>
+                <span class="breakdown-percent">(76%)</span>
+              </div>
+            </div>
+            <div class="bar-container">
+              <div class="bar-fill color-orange" style="width: 76%;"></div>
+            </div>
+            <div class="breakdown-details">
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Infrastructure numérique</span>
+                  <span>4 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 2%; background: rgba(255, 162, 0, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Consommation d'énergie</span>
+                  <span>6 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 2%; background: rgba(255, 162, 0, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Fuites de fluide de climatisation</span>
+                  <span>0 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 50%; background: rgba(255, 162, 0, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Autres</span>
+                  <span>755 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 99%; background: rgba(255, 162, 0, 0.4);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="breakdown-card">
+            <div class="breakdown-header">
+              <span class="breakdown-title">IT</span>
+              <div class="breakdown-value-container">
+                <span class="breakdown-value">0 kgCO2e</span>
+                <span class="breakdown-percent">(76%)</span>
+              </div>
+            </div>
+            <div class="bar-container">
+              <div class="bar-fill color-green" style="width: 76%;"></div>
+            </div>
+            <div class="breakdown-details">
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Equipements</span>
+                  <span>37 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 2%; background: rgba(12, 232, 155, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Usage numérique</span>
+                  <span>2 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 2%; background: rgba(12, 232, 155, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Fuites de fluide de climatisation</span>
+                  <span>0 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 50%; background: rgba(12, 232, 155, 0.4);"></div>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-row">
+                  <span>Autres</span>
+                  <span>755 kgCO2e</span>
+                </div>
+                <div class="detail-bar">
+                  <div class="detail-bar-fill" style="width: 99%; background: rgba(12, 232, 155, 0.4);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
