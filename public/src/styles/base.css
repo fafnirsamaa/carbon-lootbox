@@ -191,6 +191,10 @@ body {
   justify-content: center;
 }
 
+.card-header.with-bg {
+  background: #FEE440;
+}
+
 .card-icon {
   width: 12px;
   height: 12px;
