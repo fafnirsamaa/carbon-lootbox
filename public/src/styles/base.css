@@ -1,0 +1,388 @@
+/* =========================================================
+   BASE STYLES — shared across all pages
+   ========================================================= */
+
+/* Fonts */
+@font-face {
+  font-family: 'N27';
+  src: url('../fonts/N27-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'N27';
+  src: url('../fonts/N27-Medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'N27';
+  src: url('../fonts/N27-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Screen preview */
+body {
+  font-family: 'N27', sans-serif;
+  background: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* A4 page container */
+.page {
+  width: 595px;
+  min-height: 842px;
+  background: white;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Shared header (title + page number) */
+.header,
+.page-header,
+.hypothesis-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Page titles (h1) */
+.title,
+.page-title,
+.hypothesis-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #131313;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+/* Page number */
+.page-number {
+  font-size: 8px;
+  color: #878787;
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Section titles (h2) */
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #131313;
+  line-height: normal;
+}
+
+/* Section subtitle */
+.section-subtitle {
+  font-size: 8px;
+  color: #878787;
+  height: auto;
+}
+
+/* Card titles (h3) */
+.card-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #131313;
+  line-height: normal;
+}
+
+/* Icon wrapper (yellow square) */
+.icon-wrapper {
+  width: 24px;
+  height: 24px;
+  background: #fee440;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-wrapper img,
+.icon-wrapper svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hypothesis section header */
+.hypothesis-description {
+  flex: 1;
+  font-size: 8px;
+  color: #878787;
+  line-height: normal;
+}
+
+.hypothesis-description strong {
+  color: #131313;
+  font-weight: 500;
+}
+
+/* Category legend chip */
+.category-legend {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.category-icon {
+  width: 8px;
+  height: 8px;
+  background: #fee440;
+  border-radius: 2px;
+}
+
+.category-label {
+  font-size: 8px;
+  color: #131313;
+}
+
+/* Hypothesis / action cards wrapper */
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.hypothesis-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 12px;
+  padding: 4px;
+  width: 100%;
+}
+
+.hypothesis-card.with-bg {
+  background: #f6f6f6;
+}
+
+.card-header {
+  background: unset;
+  border-radius: 8px;
+  padding: 8px 16px 8px 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inside hypothesis cards: indented with padding */
+.hypothesis-card .card-content {
+  padding: 6px;
+  gap: 8px;
+}
+
+.hypothesis-card .card-content p {
+  font-size: 12px;
+  color: #131313;
+  line-height: normal;
+}
+
+/* Inside action cards: flush, tighter gap */
+.action-card .card-content {
+  flex: 1;
+  gap: 4px;
+}
+
+/* Bullet list */
+.list-block {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.list-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  gap: 3px;
+  padding: 4px 0;
+}
+
+.list-bullet {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.bullet-dot {
+  width: 6px;
+  height: 6px;
+  background: #fee440;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.list-item p {
+  flex: 1;
+  font-size: 12px;
+  color: #131313;
+  line-height: normal;
+}
+
+/* Generic section container */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Section header row (title + subtitle) */
+.section-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Action card (pages 6/7/8) */
+.action-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* Info boxes (pages 5/8) */
+.info-boxes {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.info-boxes.single {
+  display: block;
+}
+
+.info-box {
+  flex: 1;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.info-box.single {
+  flex: none;
+  width: 100%;
+}
+
+.info-box-border {
+  width: 6px;
+  flex-shrink: 0;
+}
+
+.info-box-border.green { background: #0ce89b; }
+.info-box-border.gray  { background: #6d6d6d; }
+
+.info-box-content {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-box.green .info-box-content { background: #f0fdf2; }
+.info-box.gray  .info-box-content { background: #f6f6f6; }
+
+.info-box-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.info-box-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.info-box-title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 700;
+  color: #131313;
+  line-height: normal;
+}
+
+.info-box-text {
+  font-size: 12px;
+  color: #131313;
+  line-height: normal;
+}
+
+.info-box-text.underline { text-decoration: underline; }
+
+.info-box-text p { margin: 0; }
+.info-box-text p + p { margin-top: 8px; }
+
+/* =========================================================
+   PRINT UTILITIES
+   ========================================================= */
+.page-break { page-break-after: always; page-break-inside: avoid; margin-top: 2rem; }
+.no-break   { page-break-inside: avoid; }
+.print-only { display: none; }
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { margin: 0; padding: 0; background: white; }
+  .page { box-shadow: none; margin: 0; min-height: 0; }
+  img, table, figure { page-break-inside: avoid; }
+  h1, h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+  p { orphans: 3; widows: 3; }
+  a[href]:after { content: " (" attr(href) ") "; font-size: 10pt; }
+  .print-only { display: block !important; }
+  img { max-width: 100%; height: auto; object-fit: contain; }
+}

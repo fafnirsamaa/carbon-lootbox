@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Rapport Carbon Lootbox - Page 8</title>
+  <link rel="stylesheet" href="../src/styles/base.css">
+  <style>
+    .page-title { flex: 1; }
+
+    /* Page 8: section-title and card-title are 16px */
+    .section-title { font-size: 16px; font-weight: 700; }
+    .card-title    { font-size: 16px; font-weight: 600; }
+
+    .card-text {
+      font-size: 12px;
+      color: #131313;
+      line-height: normal;
+    }
+
+    /* Page 8 info-boxes use gap: 8px instead of 16px */
+    .info-boxes { gap: 8px; }
+
+    /* Logo Card */
+    .logo-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      padding: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-card img {
+      max-height: 81px;
+      object-fit: contain;
+    }
+
+    .logo-card img:nth-child(1) {
+      width: 74px;
+    }
+
+    .logo-card img:nth-child(2) {
+      flex: 1;
+      max-width: 150px;
+    }
+
+    .logo-card img:nth-child(3) {
+      flex: 1;
+      max-width: 150px;
+    }
+
+    .logo-card img:nth-child(4) {
+      width: 111px;
+      height: 63px;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1 class="page-title">engagements et actions de niji</h1>
+      <span class="page-number">8/8</span>
+    </header>
+
+    <section class="section" aria-label="Usages numériques">
+      <h2 class="section-title">Usages numériques</h2>
+      
+      <article class="action-card">
+        <div class="icon-wrapper">
+          <img src="../src/assets/icons/mobile_data.svg" alt="">
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Hébergement des données</h3>
+          <p class="card-text">Niji fait le choix d'héberger ses données en France et en Europe.</p>
+        </div>
+      </article>
+
+      <div class="info-boxes">
+        <aside class="info-box green">
+          <div class="info-box-border green"></div>
+          <div class="info-box-content">
+            <div class="info-box-header">
+              <img src="../src/assets/icons/icon-bonnes-pratiques.svg" alt="" class="info-box-icon">
+              <h3 class="info-box-title">Le saviez-vous ?</h3>
+            </div>
+            <p class="info-box-text">
+              Les collaborateurs Niji émettent approximativement 35% de moins de tCO2eq/an qu'un français moyen sur les déplacements domicile – travail et sur une année.
+            </p>
+          </div>
+        </aside>
+        <aside class="info-box gray">
+          <div class="info-box-border gray"></div>
+          <div class="info-box-content">
+            <div class="info-box-header">
+              <img src="../src/assets/icons/icon-source.svg" alt="" class="info-box-icon">
+              <h3 class="info-box-title">Source</h3>
+            </div>
+            <p class="info-box-text underline">
+              Bilan Carbone Niji 2024 et Ministères Aménagement du Territoire Transition Ecologique
+              Déplacements domicile-travail : des émissions de gaz à effet de serre très variables selon les territoires | Données et études statistiques
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Nos engagements">
+      <h2 class="section-title">Nos engagements pour un numérique utile</h2>
+      
+      <figure class="logo-card" aria-label="Partenaires et chartes">
+        <img src="../src/assets/images/logo-pacte-mondial.png" alt="Pacte Mondial">
+        <img src="../src/assets/images/logo-inr.png" alt="INR">
+        <img src="../src/assets/images/logo-planet-tech-care.png" alt="Planet Tech Care">
+        <img src="../src/assets/images/logo-positive-n.png" alt="Positive N">
+      </figure>
+    </section>
+  </main>
+</body>
+</html>

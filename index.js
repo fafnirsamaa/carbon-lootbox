@@ -5,9 +5,17 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-  let filePath = req.url === "/" ? "/index.html" : req.url;
   const publicDir = path.join(__dirname, "public");
-  filePath = path.join(publicDir, filePath);
+  const pagesDir = path.join(publicDir, "pages");
+  let filePath;
+
+  if (req.url === "/" || req.url === "/index.html") {
+    filePath = path.join(pagesDir, "index.html");
+  } else if (/^\/page\d+\.html$/.test(req.url)) {
+    filePath = path.join(pagesDir, path.basename(req.url));
+  } else {
+    filePath = path.join(publicDir, req.url);
+  }
 
   const ext = path.extname(filePath).toLowerCase();
   const contentTypeMap = {
@@ -20,6 +28,7 @@ const server = http.createServer((req, res) => {
     ".jpeg": "image/jpeg",
     ".gif": "image/gif",
     ".svg": "image/svg+xml",
+    ".woff2": "font/woff2",
   };
   const contentType = contentTypeMap[ext] || "text/plain; charset=utf-8";
 
