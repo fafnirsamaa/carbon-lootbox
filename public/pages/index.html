@@ -174,6 +174,112 @@
       align-items: center;
     }
 
+    .emissions-split {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .emissions-by-poste {
+      flex: 1 1 0;
+      min-width: 0;
+      background: white;
+      border-radius: 1.613px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .emission-par-membre {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .member-chart-title-wrapper {
+      display: flex;
+      gap: 2px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .member-chart-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #131313;
+    }
+
+    .member-chart-subtitle {
+      font-size: 8px;
+      color: #888;
+    }
+
+    .member-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .member-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .member-label {
+      font-size: 8px;
+      color: #131313;
+      text-align: left;
+      flex-shrink: 0;
+      width: 70px;
+    }
+
+    .member-bar {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      height: 10px;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .member-bar-segment {
+      flex: 1 0 0;
+      min-width: 0;
+      height: 100%;
+    }
+
+    .member-legend {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .member-legend-item {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .member-legend-color {
+      width: 5px;
+      height: 5px;
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    .member-legend-label {
+      font-size: 8px;
+      color: #131313;
+    }
+
     .chart-container {
       display: flex;
       gap: 12px;
@@ -212,12 +318,15 @@
       display: flex;
       flex-direction: column;
       gap: 2px;
+      width: 208px;
     }
 
     .legend-line {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
+      width: 100%;
     }
 
     .legend-item {
@@ -233,7 +342,7 @@
     }
 
     .legend-label {
-      font-size: 12px;
+      font-size: 8px;
       color: #131313;
     }
 
@@ -244,12 +353,12 @@
     }
 
     .legend-number {
-      font-size: 12px;
+      font-size: 8px;
       color: #131313;
     }
 
     .legend-percent {
-      font-size: 10px;
+      font-size: 8px;
       color: #878787;
       border: 0.5px solid;
       border-radius: 1.613px;
@@ -416,12 +525,6 @@
     </section>
 
     <section class="summary-section" aria-label="Synthèse des résultats">
-      <div class="summary-text">
-        <h2 class="summary-title">Synthèse des résultats</h2>
-        <p class="summary-description">
-          Carbon Lootbox permet de calculer une <strong>estimation du volume d'émissions produites</strong> lors de la réalisation du projet et dépendent de la précision des données renseignées
-        </p>
-      </div>
       <div class="impact-box">
         <div class="impact-header">
           <div class="impact-label">Impact C0<sub style="font-size: 10px;">2</sub></div>
@@ -435,55 +538,145 @@
           2,5 A/R Paris New York
         </div>
       </div>
+      <div class="summary-text">
+        <h2 class="summary-title">Synthèse des résultats</h2>
+        <p class="summary-description">
+          Carbon Lootbox permet de calculer une <strong>estimation du volume d'émissions produites</strong> lors de la réalisation du projet et dépendent de la précision des données renseignées
+        </p>
+      </div>
     </section>
 
     <section class="emissions-section" aria-label="Répartition des émissions">
-      <div class="section-title-wrapper">
-        <h2 class="section-title">Répartition des émissions par poste</h2>
-        <p class="section-subtitle">(en kgCO2e)</p>
-      </div>
+      <div class="emissions-split">
+        <div class="emissions-by-poste">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Répartition des émissions par poste</h2>
+            <p class="section-subtitle">(en kgCO2e)</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart-placeholder"></div>
+            <div class="legend">
+              <div class="legend-line">
+                <div class="legend-item">
+                  <div class="legend-color color-orange"></div>
+                  <div class="legend-label">Site Niji</div>
+                </div>
+                <div class="legend-value">
+                  <span class="legend-number">1 345 009</span>
+                  <span class="legend-percent border-orange">100%</span>
+                </div>
+              </div>
+              <div class="legend-line">
+                <div class="legend-item">
+                  <div class="legend-color color-purple"></div>
+                  <div class="legend-label">Déplacement</div>
+                </div>
+                <div class="legend-value">
+                  <span class="legend-number">1 345 009</span>
+                  <span class="legend-percent border-purple">100%</span>
+                </div>
+              </div>
+              <div class="legend-line">
+                <div class="legend-item">
+                  <div class="legend-color color-green"></div>
+                  <div class="legend-label">IT</div>
+                </div>
+                <div class="legend-value">
+                  <span class="legend-number">1 345 009</span>
+                  <span class="legend-percent border-green">100%</span>
+                </div>
+              </div>
+              <div class="legend-line">
+                <div class="legend-item">
+                  <div class="legend-color color-red"></div>
+                  <div class="legend-label">Télétravail</div>
+                </div>
+                <div class="legend-value">
+                  <span class="legend-number">1 345 009</span>
+                  <span class="legend-percent border-red">100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="chart-container">
-        <div class="chart-placeholder"></div>
-        <div class="legend">
-          <div class="legend-line">
-            <div class="legend-item">
-              <div class="legend-color color-orange"></div>
-              <div class="legend-label">Site Niji</div>
+        <div class="emission-par-membre" aria-label="Émission par membre">
+          <div class="member-chart-title-wrapper">
+            <h2 class="member-chart-title">Émission par membre</h2>
+            <p class="member-chart-subtitle">(en kgCO2e)</p>
+          </div>
+          <div class="member-rows">
+            <div class="member-row">
+              <span class="member-label">Lead Tech / Devops</span>
+              <div class="member-bar">
+                <div class="member-bar-segment color-orange"></div>
+                <div class="member-bar-segment color-purple"></div>
+                <div class="member-bar-segment color-green"></div>
+                <div class="member-bar-segment color-red"></div>
+              </div>
             </div>
-            <div class="legend-value">
-              <span class="legend-number">1 345 009</span>
-              <span class="legend-percent border-orange">100%</span>
+            <div class="member-row">
+              <span class="member-label">Manager</span>
+              <div class="member-bar">
+                <div class="member-bar-segment color-orange"></div>
+                <div class="member-bar-segment color-purple"></div>
+                <div class="member-bar-segment color-green"></div>
+                <div class="member-bar-segment color-red"></div>
+              </div>
+            </div>
+            <div class="member-row">
+              <span class="member-label">Business Analyst</span>
+              <div class="member-bar">
+                <div class="member-bar-segment color-orange"></div>
+                <div class="member-bar-segment color-purple"></div>
+                <div class="member-bar-segment color-green"></div>
+                <div class="member-bar-segment color-red"></div>
+              </div>
+            </div>
+            <div class="member-row">
+              <span class="member-label">Lead Tech</span>
+              <div class="member-bar">
+                <div class="member-bar-segment color-orange"></div>
+                <div class="member-bar-segment color-purple"></div>
+                <div class="member-bar-segment color-green"></div>
+                <div class="member-bar-segment color-red"></div>
+              </div>
+            </div>
+            <div class="member-row">
+              <span class="member-label">Chef de projet 1</span>
+              <div class="member-bar">
+                <div class="member-bar-segment color-orange"></div>
+                <div class="member-bar-segment color-purple"></div>
+                <div class="member-bar-segment color-green"></div>
+                <div class="member-bar-segment color-red"></div>
+              </div>
+            </div>
+            <div class="member-row">
+              <span class="member-label">Testeur 1</span>
+              <div class="member-bar">
+                <div class="member-bar-segment color-orange"></div>
+                <div class="member-bar-segment color-purple"></div>
+                <div class="member-bar-segment color-green"></div>
+                <div class="member-bar-segment color-red"></div>
+              </div>
             </div>
           </div>
-          <div class="legend-line">
-            <div class="legend-item">
-              <div class="legend-color color-purple"></div>
-              <div class="legend-label">Déplacement</div>
+          <div class="member-legend">
+            <div class="member-legend-item">
+              <div class="member-legend-color color-orange"></div>
+              <span class="member-legend-label">Site Niji</span>
             </div>
-            <div class="legend-value">
-              <span class="legend-number">1 345 009</span>
-              <span class="legend-percent border-purple">100%</span>
+            <div class="member-legend-item">
+              <div class="member-legend-color color-purple"></div>
+              <span class="member-legend-label">Déplacement</span>
             </div>
-          </div>
-          <div class="legend-line">
-            <div class="legend-item">
-              <div class="legend-color color-green"></div>
-              <div class="legend-label">IT</div>
+            <div class="member-legend-item">
+              <div class="member-legend-color color-green"></div>
+              <span class="member-legend-label">IT</span>
             </div>
-            <div class="legend-value">
-              <span class="legend-number">1 345 009</span>
-              <span class="legend-percent border-green">100%</span>
-            </div>
-          </div>
-          <div class="legend-line">
-            <div class="legend-item">
-              <div class="legend-color color-red"></div>
-              <div class="legend-label">Télétravail</div>
-            </div>
-            <div class="legend-value">
-              <span class="legend-number">1 345 009</span>
-              <span class="legend-percent border-red">100%</span>
+            <div class="member-legend-item">
+              <div class="member-legend-color color-red"></div>
+              <span class="member-legend-label">Télétravail</span>
             </div>
           </div>
         </div>
