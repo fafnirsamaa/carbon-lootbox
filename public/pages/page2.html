@@ -5,94 +5,6 @@
   <title>Rapport Carbon Lootbox - Page 2</title>
   <link rel="stylesheet" href="../src/styles/base.css">
   <style>
-    /* Emissions by Member Section */
-    .emissions-by-member {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
-
-    /* page2: section-header gap override */
-    .section-header { gap: 2px; }
-
-    .chart-rows {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .chart-row {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      width: 100%;
-    }
-
-    .member-label {
-      width: 70px;
-      font-size: 8px;
-      color: #131313;
-      text-align: right;
-      line-height: normal;
-    }
-
-    .horizontal-bar {
-      flex: 1;
-      display: flex;
-      height: 10px;
-    }
-
-    .bar-segment {
-      height: 100%;
-    }
-
-    .bar-segment.orange {
-      background: #ffa200;
-      width: 239px;
-    }
-
-    .bar-segment.purple {
-      background: #8147f5;
-      width: 162px;
-    }
-
-    .bar-segment.green {
-      background: #0ce89b;
-      flex: 1;
-    }
-
-    .bar-segment.red {
-      background: #f65555;
-      width: 18px;
-    }
-
-    /* Legend */
-    .chart-legend {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .legend-item {
-      display: flex;
-      gap: 2px;
-      align-items: center;
-    }
-
-    .legend-color {
-      width: 4.838px;
-      height: 4.838px;
-      border-radius: 0.806px;
-    }
-
-    .legend-label {
-      font-size: 8px;
-      color: #131313;
-    }
-
     /* Hypotheses Section */
     .hypotheses-section {
       display: flex;
@@ -146,94 +58,6 @@
       <h1 class="title">rapport carbon lootbox</h1>
       <span class="page-number">2/8</span>
     </header>
-
-    <section class="emissions-by-member" aria-label="Émission par membre">
-      <div class="section-header">
-        <h2 class="section-title">Émission par membre</h2>
-        <p class="section-subtitle">(en kgCO2e)</p>
-      </div>
-
-      <div class="chart-rows">
-        <div class="chart-row">
-          <div class="member-label">Lead Tech / Devops</div>
-          <div class="horizontal-bar">
-            <div class="bar-segment orange"></div>
-            <div class="bar-segment purple"></div>
-            <div class="bar-segment green"></div>
-            <div class="bar-segment red"></div>
-          </div>
-        </div>
-
-        <div class="chart-row">
-          <div class="member-label">Manager</div>
-          <div class="horizontal-bar">
-            <div class="bar-segment orange"></div>
-            <div class="bar-segment purple"></div>
-            <div class="bar-segment green"></div>
-            <div class="bar-segment red"></div>
-          </div>
-        </div>
-
-        <div class="chart-row">
-          <div class="member-label">Business Analyst</div>
-          <div class="horizontal-bar">
-            <div class="bar-segment orange"></div>
-            <div class="bar-segment purple"></div>
-            <div class="bar-segment green"></div>
-            <div class="bar-segment red"></div>
-          </div>
-        </div>
-
-        <div class="chart-row">
-          <div class="member-label">Lead Tech</div>
-          <div class="horizontal-bar">
-            <div class="bar-segment orange"></div>
-            <div class="bar-segment purple"></div>
-            <div class="bar-segment green"></div>
-            <div class="bar-segment red"></div>
-          </div>
-        </div>
-
-        <div class="chart-row">
-          <div class="member-label">Chef de projet 1</div>
-          <div class="horizontal-bar">
-            <div class="bar-segment orange"></div>
-            <div class="bar-segment purple"></div>
-            <div class="bar-segment green"></div>
-            <div class="bar-segment red"></div>
-          </div>
-        </div>
-
-        <div class="chart-row">
-          <div class="member-label">Testeur 1</div>
-          <div class="horizontal-bar">
-            <div class="bar-segment orange"></div>
-            <div class="bar-segment purple"></div>
-            <div class="bar-segment green"></div>
-            <div class="bar-segment red"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="chart-legend">
-        <div class="legend-item">
-          <div class="legend-color" style="background: #ffa200;"></div>
-          <span class="legend-label">Site Niji</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #8147f5;"></div>
-          <span class="legend-label">Déplacement</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #0ce89b;"></div>
-          <span class="legend-label">IT</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #f65555;"></div>
-          <span class="legend-label">Télétravail</span>
-        </div>
-      </div>
-    </section>
 
     <section class="hypotheses-section" aria-label="Hypothèses de calcul">
       <header class="hypothesis-header">
@@ -311,6 +135,16 @@
                 <p>Hypothèse d'une consommation électrique annuelle de 112 kWh/m² par an (source OID).</p>
               </div>
             </div>
+          </div>
+        </article>
+
+        <article class="hypothesis-card">
+          <div class="card-header with-bg">
+            <img src="../src/assets/icons/laptop.svg" alt="Laptop icon" class="card-icon">
+            <h3 class="card-title">Infrastructure numérique</h3>
+          </div>
+          <div class="card-content">
+            <p>Hypothèse d'une durée de vie d'un équipement identique à la durée d'amortissement de chaque équipement Niji.</p>
           </div>
         </article>
       </div>

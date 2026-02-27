@@ -182,7 +182,7 @@ body {
 }
 
 .card-header {
-  background: unset;
+  background-color: rgba(254, 228, 63, 1);
   border-radius: 8px;
   padding: 8px 16px 8px 8px;
   display: flex;
